@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image and Text</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        header {
+            background-color: #dd0000;
+            color: #f5f3f2;
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            padding: 10px 22px;
+            text-align: left;
+        }
+
+        nav {
+            text-align: center;
+        }
+
+        nav .nav-link {
+            margin-right: 20px;
+            color: #fff; /* White text color */
+            text-decoration: none;
+        }
+
+        /* Custom CSS for submenu animation */
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .dropdown-menu {
+            display: none;
+            background-color: #dd0000;
+            animation: fadeOut 0.3s ease-in-out;
+        }
+
+        .dropdown-menu a {
+            color: #fff;
+        }
+
+        .dropdown-menu a:hover {
+            color: #3f3f3f;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+        }
+
+        .wrapper {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content {
+            flex: 1;
+        }
+
+        /* Custom CSS to adjust navigation links alignment */
+        @media (max-width: 768px) {
+            nav {
+                text-align: left !important;
+            }
+
+            .navbar-collapse {
+                justify-content: flex-start;
+            }
+
+            .navbar-nav {
+                margin-top: 10px;
+            }
+
+            .navbar-toggler {
+                margin-right: 0;
+            }
+
+            .navbar-toggler-icon {
+                float: left;
+            }
+
+            nav .nav-link {
+                margin-right: 0;
+            }
+        }
+
+        .image-container {
+            position: relative;
+            display: inline-block;
+            height: 400px; /* Set a fixed height for all images */
+            margin: 30px; /* Add margin to create space between images */
+        }
+
+        /* Adjust margin for the last image-container to remove extra space */
+        .image-container:last-child {
+            margin-right: 0;
+        }
+
+        .image-container:hover img {
+            opacity: 0.8; /* Adjust the opacity as desired */
+        }
+
+        .selection {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            opacity: 0; /* Hidden by default */
+            transition: opacity 0.3s ease, transform 0.3s ease; /* Added transform for smooth animation */
+            transform: translateY(-10px); /* Start slightly above and then move down */
+        }
+
+        .image-container:hover .selection {
+            opacity: 1;
+            transform: translateY(0); /* Move to normal position on hover */
+        }
+
+        .image {
+            max-width: 100%;
+            height: 100%; /* Use 100% height to maintain aspect ratio */
+            transition: opacity 0.3s ease;
+        }
+
+        .selection h1 {
+            font-size: 1.2em;
+            margin: 0;
+            color: #fff; /* Text color added here */
+        }
+
+        .selection p {
+            font-size: 1em;
+            margin: 0;
+            color: #fff; /* Text color added here */
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 logo">
+                <h3>
+                    <font color="#f5f3f2" size="6">ﾌ尺乇ᗪ</font>
+                </h3>
+            </div>
+            <div class="col-md-9">
+                <font color="#f5f3f2" size="5">
+                    <nav class="navbar navbar-expand-lg navbar-dark">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.html">𝗛𝗼𝗺𝗲</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="highlights.html">𝐇𝐢𝐠𝐡𝐥𝐢𝐠𝐡𝐭𝐬</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="galleryDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        𝗚𝗮𝗹𝗹𝗲𝗿𝘆
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="galleryDropdown">
+                                        <a class="dropdown-item" href="gallery.html">𝗡𝗕𝗔 𝗟𝗘𝗚𝗘𝗡𝗗𝗦</a>
+                                        
+                                        <a class="dropdown-item" href="gallery2.html">𝗠𝗩𝗣 𝗥𝗔𝗡𝗞𝗜𝗡𝗚𝗦</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="contact.html">𝗖𝗼𝗻𝘁𝗮𝗰𝘁</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="teams.html">𝐓𝐞𝐚𝐦𝐬</a>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="stats.html">𝐒𝐭𝐚𝐭𝐬</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </font>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <!-- Michael Jordan -->
+    <div class="image-container">
+        <img class="image" src="https://4kwallpapers.com/images/wallpapers/michael-jordan-2560x1440-11713.jpg">
+        <div class="selection">
+            <h1>Michael Jordan</h1>
+            <p>Michael Jordan, often hailed as the greatest basketball player of all time, had an illustrious career in the National Basketball Association (NBA). His extraordinary talent and unmatched competitiveness made him a global icon and a true legend of the sport.</p>
+        </div>
+    </div>
+
+    <!-- LeBron James -->
+    <div class="image-container">
+        <img class="image" src="https://cdn.vox-cdn.com/thumbor/R7W_NLDbU4aTv8vVNBf3_V4zGf0=/1400x788/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/23306095/1239063515.jpg">
+        <div class="selection">
+            <h1>LeBron James</h1>
+            <p>LeBron James is a basketball legend known for his exceptional talent, versatility, and leadership on the court. With a career marked by numerous MVP awards and multiple NBA championships, he has left an indelible mark on the world of basketball and is often regarded as one of the greatest players in the history of the NBA. Off the court, LeBron is equally renowned for his philanthropy and community activism, making him a true icon both in and out of the basketball arena.</p>
+        </div>
+    </div>
+
+    <!-- Kobe Bryant -->
+    <div class="image-container">
+        <img class="image" src="https://wallpapercave.com/wp/wp3677188.jpg">
+        <div class="selection">
+            <h1>Kobe Bryant</h1>
+            <p>Kobe Bryant, known as the "Black Mamba," was a basketball legend who played his entire career with the Los Angeles Lakers. He was a fierce competitor and a five-time NBA champion. Bryant's work ethic and scoring ability earned him a place among the greatest players in the history of the game.</p>
+        </div>
+    </div>
+
+    <!-- Tim Duncan -->
+    <div class="image-container">
+        <img class="image" src="https://library.sportingnews.com/styles/twitter_card_120x120/s3/2021-10/tim-duncan-022016-getty-ftr_1fdx48qltnva71fnvv15n8wwen.jpg?itok=4jBAo4-N">
+        <div class="selection">
+            <h1>Tim Duncan</h1>
+            <p>Tim Duncan, often referred to as "The Big Fundamental," was a dominant force for the San Antonio Spurs. With five NBA championships and numerous All-Star selections, Duncan is considered one of the best power forwards in NBA history.</p>
+        </div>
+    </div>
+
+    <!-- Shaquille O'Neal -->
+    <div class="image-container">
+        <img class="image" src="https://wallpaper.dog/large/20581068.jpg">
+        <div class="selection">
+            <h1>Shaquille O'Neal</h1>
+            <p>Shaquille O'Neal, also known as "Shaq," was a dominant center in the NBA. He won four NBA championships and was known for his combination of size and agility.</p>
+        </div>
+    </div>
+
+    <!-- Magic Johnson -->
+    <div class="image-container">
+        <img class="image" src="https://i.ytimg.com/vi/bDiIwwfzfPI/maxresdefault.jpg">
+        <div class="selection">
+            <h1>Magic Johnson</h1>
+            <p>Magic Johnson was a legendary point guard for the Los Angeles Lakers. He won multiple NBA championships and was known for his exceptional passing and leadership on the court.</p>
+        </div>
+    </div>
+
+    <!-- Larry Bird -->
+    <div class="image-container">
+        <img class="image" src="https://nba-smart.imgix.net/Larry_Bird_Emotion.jpeg">
+        <div class="selection">
+            <h1>Larry Bird</h1>
+            <p>Larry Bird was a versatile forward for the Boston Celtics and one of the greatest players in NBA history. He won multiple NBA championships and was known for his scoring and basketball IQ.</p>
+        </div>
+    </div>
+
+    <!-- Hakeem Olajuwon -->
+    <div class="image-container">
+        <img class="image" src="https://wallpapercave.com/wp/wp2279387.jpg">
+        <div class="selection">
+            <h1>Hakeem Olajuwon</h1>
+            <p>Hakeem Olajuwon, also known as "The Dream," was a dominant center for the Houston Rockets. He won two NBA championships and is considered one of the greatest centers in NBA history.</p>
+        </div>
+    </div>
+
+    <!-- Bill Russell -->
+    <div class="image-container">
+        <img class="image" src="https://wallpapers.com/images/hd/bill-russell-boston-player-portrait-v49yiptnswk4wqhj.jpg">
+        <div class="selection">
+            <h1>Bill Russell</h1>
+            <p>Bill Russell is an NBA legend who won an astounding 11 NBA championships with the Boston Celtics. He was known for his defensive prowess and shot-blocking ability.</p>
+        </div>
+    </div>
+
+    <!-- Wilt Chamberlain -->
+    <div class="image-container">
+        <img class="image" src="https://wallpapercave.com/wp/wp3813117.jpg">
+        <div class="selection">
+            <h1>Wilt Chamberlain</h1>
+            <p>Wilt Chamberlain was a dominant center in the NBA and holds numerous records, including scoring 100 points in a single game. He was a true basketball icon.</p>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

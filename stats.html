@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>NBA Statistics</title>
+    <style>
+       
+        button {
+        margin-left: 10px;
+        padding: 10px 20px;
+        background-color: #dd0000; /* Green background color */
+        color: white; /* White text color */
+        border: none; /* No border */
+        border-radius: 5px; /* Rounded corners */
+        cursor: pointer; /* Cursor on hover */
+        font-size: 16px; /* Font size */
+        }
+
+        button:hover {
+        background-color: #3f3f3f; /* Darker green on hover */
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 3px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+
+        }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #dd0000;
+            color: #f5f3f2;
+            padding: 25px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            padding: 10px 22px;
+            text-align: left;
+        }
+
+        nav {
+            text-align: center;
+        }
+
+        nav .nav-link {
+            margin-right: 20px;
+            color: #fff; /* White text color */
+            text-decoration: none;
+        }
+
+        /* Custom CSS for submenu animation */
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .dropdown-menu {
+            display: none;
+            background-color: #dd0000;
+            animation: fadeOut 0.3s ease-in-out;
+        }
+
+        .dropdown-menu a {
+            color: #fff;
+        }
+
+        .dropdown-menu a:hover {
+            color: #3f3f3f;
+        }
+
+        .wrapper {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content {
+            flex: 1;
+            text-align: left;
+            padding: 20px;
+        }
+
+        /* Custom CSS to adjust navigation links alignment */
+        @media (max-width: 768px) {
+            nav {
+                text-align: left !important;
+            }
+
+            .navbar-collapse {
+                justify-content: flex-start;
+            }
+
+            .navbar-nav {
+                margin-top: 10px;
+            }
+
+            .navbar-toggler {
+                margin-right: 0;
+            }
+
+            .navbar-toggler-icon {
+                float: left;
+            }
+
+            nav .nav-link {
+                margin-right: 0;
+            }
+        }
+
+        .buttons-container {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        button {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 logo">
+                <h3>
+                    <font color="#f5f3f2" size="6">ﾌ尺乇ᗪ</font>
+                </h3>
+            </div>
+            <div class="col-md-9">
+                <font color="#f5f3f2" size="5">
+                    <nav class="navbar navbar-expand-lg">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.html">𝗛𝗼𝗺𝗲</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="highlights.html">𝐇𝐢𝐠𝐡𝐥𝐢𝐠𝐡𝐭𝐬</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="galleryDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        𝗚𝗮𝗹𝗹𝗲𝗿𝘆
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="galleryDropdown">
+                                        <a class="dropdown-item" href="gallery.html">𝗡𝗕𝗔 𝗟𝗘𝗚𝗘𝗡𝗗𝗦</a>
+                                       
+                                        <a class="dropdown-item" href="gallery2.html">𝗠𝗩𝗣 𝗥𝗔𝗡𝗞𝗜𝗡𝗚𝗦</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="contact.html">𝗖𝗼𝗻𝘁𝗮𝗰𝘁</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="teams.html">𝐓𝐞𝐚𝐦𝐬</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="stats.html">𝐒𝐭𝐚𝐭𝐬</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </font>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="wrapper">
+    <div class="content">
+        <div class="buttons-container">
+            <button onclick="displayYesterdayLeaders()">Yesterday Leaders</button>
+            <button onclick="displaySeasonLeaders()">Season Leaders</button>
+        </div>
+
+        <h2 id="categoryTitle"></h2>
+        <table id="statsTable">
+            <!-- Content will be dynamically updated by JavaScript -->
+        </table>
+    </div>
+</div>
+
+<script>
+    function displayYesterdayLeaders() {
+        document.getElementById('categoryTitle').innerHTML = 'POINTS';
+        document.getElementById('statsTable').innerHTML = `
+                          <tr>
+                    <th>Rank</th>
+                    <th>Player</th>
+                    <th>Team</th>
+                    <th>Points</th>
+                </tr>
+                <tr>
+                    <td>1.</td>
+                    <td>Giannis Antetokounmpo</td>
+                    <td>MIL</td>
+                    <td>35</td>
+                </tr>
+                <tr>
+                    <td>2.</td>
+                    <td>Stephen Curry</td>
+                    <td>GSW</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>3.</td>
+                    <td>Jaylen Brown</td>
+                    <td>BOS</td>
+                    <td>29</td>
+                </tr>
+                <tr>
+                    <td>4.</td>
+                    <td>Jayson Tatum</td>
+                    <td>BOS</td>
+                    <td>27</td>
+                </tr>
+                <tr>
+                    <td>4.</td>
+                    <td>Trae Young</td>
+                    <td>ATL</td>
+                    <td>27</td>
+                </tr>
+               </table>
+
+    <h2>REBOUNDS</h2>
+    <table>
+        <tr>
+            <th>Rank</th>
+            <th>Player</th>
+            <th>Team</th>
+            <th>Rebounds</th>
+        </tr>
+        <tr>
+            <td>1.</td>
+            <td>Bam Adebayo</td>
+            <td>MIA</td>
+            <td>17</td>
+        </tr>
+        <tr>
+            <td>2.</td>
+            <td>Kevon Looney</td>
+            <td>GSW</td>
+            <td>13</td>
+        </tr>
+        <tr>
+            <td>3.</td>
+            <td>Paolo Banchero</td>
+            <td>ORL</td>
+            <td>12</td>
+        </tr>
+        <tr>
+            <td>3.</td>
+            <td>Clint Capela</td>
+            <td>ATL</td>
+            <td>12</td>
+        </tr>
+        <tr>
+            <td>5.</td>
+            <td>Giannis Antetokounmpo</td>
+            <td>MIL</td>
+            <td>10</td>
+        </tr>
+    </table>
+
+    <h2>ASSISTS</h2>
+    <table>
+        <tr>
+            <th>Rank</th>
+            <th>Player</th>
+            <th>Team</th>
+            <th>Assists</th>
+        </tr>
+        <tr>
+            <td>1.</td>
+            <td>Trae Young</td>
+            <td>ATL</td>
+            <td>11</td>
+        </tr>
+        <tr>
+            <td>2.</td>
+            <td>Chris Paul</td>
+            <td>GSW</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td>3.</td>
+            <td>Giannis Antetokounmpo</td>
+            <td>MIL</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>3.</td>
+            <td>Jrue Holiday</td>
+            <td>BOS</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>3.</td>
+            <td>Khris Middleton</td>
+            <td>MIL</td>
+            <td>7</td>
+        </tr>
+    </table>
+
+    <h2>BLOCKS</h2>
+    <table>
+        <tr>
+            <th>Rank</th>
+            <th>Player</th>
+            <th>Team</th>
+            <th>Blocks</th>
+        </tr>
+        <tr>
+            <td>1.</td>
+            <td>Bam Adebayo</td>
+            <td>MIA</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>1.</td>
+            <td>Giannis Antetokounmpo</td>
+            <td>MIL</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>1.</td>
+            <td>Clint Capela</td>
+            <td>ATL</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>1.</td>
+            <td>Jrue Holiday</td>
+            <td>BOS</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>1.</td>
+            <td>Brook Lopez</td>
+            <td>MIL</td>
+            <td>2</td>
+        </tr>
+    </table>
+
+    <h2>STEALS</h2>
+    <table>
+        <tr>
+            <th>Rank</th>
+            <th>Player</th>
+            <th>Team</th>
+            <th>Steals</th>
+        </tr>
+        <tr>
+            <td>1.</td>
+            <td>Darius Garland</td>
+            <td>CLE</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>2.</td>
+            <td>Giannis Antetokounmpo</td>
+            <td>MIL</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>2.</td>
+            <td>Caris LeVert</td>
+            <td>CLE</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>4.</td>
+            <td>Dejounte Murray</td>
+            <td>ATL</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4.</td>
+            <td>Chris Paul</td>
+            <td>GSW</td>
+            <td>3</td>
+        </tr>
+    </table>
+
+    <h2>TURNOVERS</h2>
+    <table>
+        <tr>
+            <th>Rank</th>
+            <th>Player</th>
+            <th>Team</th>
+            <th>Turnovers</th>
+        </tr>
+        <tr>
+            <td>1.</td>
+            <td>Giannis Antetokounmpo</td>
+            <td>MIL</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>2.</td>
+            <td>Trae Young</td>
+            <td>ATL</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>3.</td>
+            <td>Saddiq Bey</td>
+            <td>ATL</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>3.</td>
+            <td>Stephen Curry</td>
+            <td>GSW</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>3.</td>
+            <td>Darius Garland</td>
+            <td>CLE</td>
+            <td>4</td>
+        </tr>
+    </table>
+
+    <h2>THREE POINTERS MADE</h2>
+    <table>
+        <tr>
+            <th>Rank</th>
+            <th>Player</th>
+            <th>Team</th>
+            <th>Three Pointers Made</th>
+        </tr>
+        <tr>
+            <td>1.</td>
+            <td>Bogdan Bogdanovic</td>
+            <td>ATL</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>1.</td>
+            <td>Dejounte Murray</td>
+            <td>ATL</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>3.</td>
+            <td>Stephen Curry</td>
+            <td>GSW</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>3.</td>
+            <td>Sam Hauser</td>
+            <td>BOS</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>3.</td>
+            <td>Kyle Lowry</td>
+            <td>MIA</td>
+            <td>4</td>
+        </tr>
+    </table>
+
+    <h2>FREE THROWS MADE</h2>
+    <table>
+        <tr>
+            <th>Rank</th>
+            <th>Player</th>
+            <th>Team</th>
+            <th>Free Throws Made</th>
+        </tr>
+        <tr>
+            <td>1.</td>
+            <td>Trae Young</td>
+            <td>ATL</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>2.</td>
+            <td>Bam Adebayo</td>
+            <td>MIA</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>2.</td>
+            <td>Jarrett Allen</td>
+            <td>CLE</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>2.</td>
+            <td>Stephen Curry</td>
+            <td>GSW</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>2.</td>
+            <td>Jonathan Kuminga</td>
+            <td>GSW</td>
+            <td>8</td>
+        </tr>
+    </table>
+
+    <h2>FANTASY POINTS</h2>
+    <table>
+        <tr>
+            <th>Rank</th>
+            <th>Player</th>
+            <th>Team</th>
+            <th>Fantasy Points</th>
+        </tr>
+        <tr>
+            <td>1.</td>
+            <td>Giannis Antetokounmpo</td>
+            <td>MIL</td>
+            <td>69.5</td>
+        </tr>
+        <tr>
+            <td>2.</td>
+            <td>Bam Adebayo</td>
+            <td>MIA</td>
+            <td>61.4</td>
+        </tr>
+        <tr>
+            <td>3.</td>
+            <td>Paolo Banchero</td>
+            <td>ORL</td>
+            <td>47.9</td>
+        </tr>
+        <tr>
+            <td>4.</td>
+            <td>Caris LeVert</td>
+            <td>CLE</td>
+            <td>47.5</td>
+        </tr>
+        <tr>
+            <td>5.</td>
+            <td>Dejounte Murray</td>
+            <td>ATL</td>
+            <td>45.5</td>
+        </tr>
+    </table>
+        `;
+    }
+
+    function displaySeasonLeaders() {
+        document.getElementById('categoryTitle').innerHTML = 'POINTS PER GAME';
+        document.getElementById('statsTable').innerHTML = `
+             <tr>
+                    <th>Rank</th>
+                    <th>Player</th>
+                    <th>Team</th>
+                    <th>Points Per Game</th>
+                </tr>
+                <tr>
+                    <td>1.</td>
+                    <td>Luka Doncic</td>
+                    <td>DAL</td>
+                    <td>32.9</td>
+                </tr>
+                <tr>
+                    <td>2.</td>
+                    <td>Joel Embiid</td>
+                    <td>PHI</td>
+                    <td>31.9</td>
+                </tr>
+                <tr>
+                    <td>3.</td>
+                    <td>Kevin Durant</td>
+                    <td>PHX</td>
+                    <td>30.2</td>
+                </tr>
+                  <tr>
+                    <td>4.</td>
+                    <td>Stephen Curry</td>
+                    <td>GSW</td>
+                    <td>30.0</td>
+                </tr>
+                  <tr>
+                    <td>5.</td>
+                    <td>Donavan Mitchell</td>
+                    <td>CLE</td>
+                    <td>29.5</td>
+                </tr>
+                </table>
+
+                 <h2>REBOUNDS</h2>
+    <table>
+        <tr>
+            <th>Rank</th>
+            <th>Player</th>
+            <th>Team</th>
+            <th>Rebounds</th>
+        </tr>
+        <tr>
+            <td>1.</td>
+            <td>Rudy Gobert</td>
+            <td>MIN</td>
+            <td>13.1</td>
+        </tr>
+        <tr>
+            <td>2.</td>
+            <td>Nikola Jovic</td>
+            <td>DEN</td>
+            <td>12.9</td>
+        </tr>
+        <tr>
+            <td>3.</td>
+            <td>Deandre Ayton</td>
+            <td>POR</td>
+            <td>12.9</td>
+        </tr>
+        <tr>
+            <td>3.</td>
+            <td>Domantas Sabonis</td>
+            <td>SAC</td>
+            <td>12.9</td>
+        </tr>
+        <tr>
+            <td>5.</td>
+            <td>Mitchell Robinson</td>
+            <td>NYK</td>
+            <td>12.4</td>
+        </tr>
+    </table>
+
+    <h2>ASSISTS</h2>
+    <table>
+        <tr>
+            <th>Rank</th>
+            <th>Player</th>
+            <th>Team</th>
+            <th>Assists</th>
+        </tr>
+        <tr>
+            <td>1.</td>
+            <td>Trae Young</td>
+            <td>ATL</td>
+            <td>11</td>
+        </tr>
+        <tr>
+            <td>2.</td>
+            <td>Chris Paul</td>
+            <td>GSW</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td>3.</td>
+            <td>Giannis Antetokounmpo</td>
+            <td>MIL</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>3.</td>
+            <td>Jrue Holiday</td>
+            <td>BOS</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>3.</td>
+            <td>Khris Middleton</td>
+            <td>MIL</td>
+            <td>7</td>
+        </tr>
+    </table>
+
+    <h2>BLOCKS</h2>
+    <table>
+        <tr>
+            <th>Rank</th>
+            <th>Player</th>
+            <th>Team</th>
+            <th>Blocks</th>
+        </tr>
+        <tr>
+            <td>1.</td>
+            <td>Bam Adebayo</td>
+            <td>MIA</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>1.</td>
+            <td>Giannis Antetokounmpo</td>
+            <td>MIL</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>1.</td>
+            <td>Clint Capela</td>
+            <td>ATL</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>1.</td>
+            <td>Jrue Holiday</td>
+            <td>BOS</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>1.</td>
+            <td>Brook Lopez</td>
+            <td>MIL</td>
+            <td>2</td>
+        </tr>
+    </table>
+
+    <h2>STEALS</h2>
+    <table>
+        <tr>
+            <th>Rank</th>
+            <th>Player</th>
+            <th>Team</th>
+            <th>Steals</th>
+        </tr>
+        <tr>
+            <td>1.</td>
+            <td>Darius Garland</td>
+            <td>CLE</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>2.</td>
+            <td>Giannis Antetokounmpo</td>
+            <td>MIL</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>2.</td>
+            <td>Caris LeVert</td>
+            <td>CLE</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>4.</td>
+            <td>Dejounte Murray</td>
+            <td>ATL</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4.</td>
+            <td>Chris Paul</td>
+            <td>GSW</td>
+            <td>3</td>
+        </tr>
+    </table>
+
+    <h2>TURNOVERS</h2>
+    <table>
+        <tr>
+            <th>Rank</th>
+            <th>Player</th>
+            <th>Team</th>
+            <th>Turnovers</th>
+        </tr>
+        <tr>
+            <td>1.</td>
+            <td>Giannis Antetokounmpo</td>
+            <td>MIL</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>2.</td>
+            <td>Trae Young</td>
+            <td>ATL</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>3.</td>
+            <td>Saddiq Bey</td>
+            <td>ATL</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>3.</td>
+            <td>Stephen Curry</td>
+            <td>GSW</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>3.</td>
+            <td>Darius Garland</td>
+            <td>CLE</td>
+            <td>4</td>
+        </tr>
+    </table>
+
+    <h2>THREE POINTERS MADE</h2>
+    <table>
+        <tr>
+            <th>Rank</th>
+            <th>Player</th>
+            <th>Team</th>
+            <th>Three Pointers Made</th>
+        </tr>
+        <tr>
+            <td>1.</td>
+            <td>Bogdan Bogdanovic</td>
+            <td>ATL</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>1.</td>
+            <td>Dejounte Murray</td>
+            <td>ATL</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>3.</td>
+            <td>Stephen Curry</td>
+            <td>GSW</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>3.</td>
+            <td>Sam Hauser</td>
+            <td>BOS</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>3.</td>
+            <td>Kyle Lowry</td>
+            <td>MIA</td>
+            <td>4</td>
+        </tr>
+    </table>
+
+    <h2>FREE THROWS MADE</h2>
+    <table>
+        <tr>
+            <th>Rank</th>
+            <th>Player</th>
+            <th>Team</th>
+            <th>Free Throws Made</th>
+        </tr>
+        <tr>
+            <td>1.</td>
+            <td>Trae Young</td>
+            <td>ATL</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>2.</td>
+            <td>Bam Adebayo</td>
+            <td>MIA</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>2.</td>
+            <td>Jarrett Allen</td>
+            <td>CLE</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>2.</td>
+            <td>Stephen Curry</td>
+            <td>GSW</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>2.</td>
+            <td>Jonathan Kuminga</td>
+            <td>GSW</td>
+            <td>8</td>
+        </tr>
+    </table>
+
+    <h2>FANTASY POINTS</h2>
+    <table>
+        <tr>
+            <th>Rank</th>
+            <th>Player</th>
+            <th>Team</th>
+            <th>Fantasy Points</th>
+        </tr>
+        <tr>
+            <td>1.</td>
+            <td>Giannis Antetokounmpo</td>
+            <td>MIL</td>
+            <td>69.5</td>
+        </tr>
+        <tr>
+            <td>2.</td>
+            <td>Bam Adebayo</td>
+            <td>MIA</td>
+            <td>61.4</td>
+        </tr>
+        <tr>
+            <td>3.</td>
+            <td>Paolo Banchero</td>
+            <td>ORL</td>
+            <td>47.9</td>
+        </tr>
+        <tr>
+            <td>4.</td>
+            <td>Caris LeVert</td>
+            <td>CLE</td>
+            <td>47.5</td>
+        </tr>
+        <tr>
+            <td>5.</td>
+            <td>Dejounte Murray</td>
+            <td>ATL</td>
+            <td>45.5</td>
+        </tr>
+    </table>
+        `;
+    }
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>

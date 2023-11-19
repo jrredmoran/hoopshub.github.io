@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>hoopshub.github.io</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('https://i.ibb.co/g7VS6wh/background.png');
+            background-size: cover 70%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center center;
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h3 a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        h3 a:hover {
+            color: #c3f3f3f;
+            transition: color 0.3s ease;
+        }
+
+        header {
+            background-color: #dd0000;
+            color: #f5f3f2;
+            padding: 20px 0;
+        }
+
+        .logo {
+            padding: 10px 22px;
+            text-align: left;
+        }
+
+        nav {
+            text-align: center;
+        }
+
+        nav .nav-link {
+            margin-right: 20px;
+            color: #fff; /* White text color */
+            text-decoration: none;
+        }
+
+        /* Custom CSS for submenu animation */
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .dropdown-menu {
+            display: none;
+            background-color: #dd0000;
+            animation: fadeOut 0.3s ease-in-out;
+        }
+
+        .dropdown-menu a {
+            color: #fff;
+        }
+
+        .dropdown-menu a:hover {
+            color: #3f3f3f;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+        }
+
+        .wrapper {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content {
+            flex: 1;
+        }
+
+        footer {
+            background-color: #dd0000;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer a {
+            color: #dd0000;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            color: #3f3f3f !important;
+        }
+
+        /* Custom CSS to adjust navigation links alignment */
+        @media (max-width: 768px) {
+            nav {
+                text-align: left !important;
+            }
+
+            .navbar-collapse {
+                justify-content: flex-start;
+            }
+
+            .navbar-nav {
+                margin-top: 10px;
+            }
+
+            .navbar-toggler {
+                margin-right: 0;
+            }
+
+            .navbar-toggler-icon {
+                float: left;
+            }
+
+            nav .nav-link {
+                margin-right: 0;
+            }
+
+    </style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 logo">
+                <h3>
+                    <font color="#f5f3f2" size="6">ﾌ尺乇ᗪ</font>
+                </h3>
+            </div>
+            <div class="col-md-9">
+                <font color="#f5f3f2" size="5">
+                    <nav class="navbar navbar-expand-lg">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.html">𝗛𝗼𝗺𝗲</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="highlights.html">𝐇𝐢𝐠𝐡𝐥𝐢𝐠𝐡𝐭𝐬</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="galleryDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        𝗚𝗮𝗹𝗹𝗲𝗿𝘆
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="galleryDropdown">
+                                        <a class="dropdown-item" href="gallery.html">𝗡𝗕𝗔 𝗟𝗘𝗚𝗘𝗡𝗗𝗦</a>
+                                      
+                                        <a class="dropdown-item" href="gallery2.html">𝗠𝗩𝗣 𝗥𝗔𝗡𝗞𝗜𝗡𝗚𝗦</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="contact.html">𝗖𝗼𝗻𝘁𝗮𝗰𝘁</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="teams.html">𝐓𝐞𝐚𝐦𝐬</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="stats.html">𝐒𝐭𝐚𝐭𝐬</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </font>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="wrapper">
+    <div class="content">
+        <h1 align="center">
+            <font color="#000" size="10">
+                𝙃𝙤𝙤𝙥𝙨𝙃𝙪𝙗
+            </font>
+        </h1>
+        <h3 align="center">
+            <font color="#000" size="6">
+                ʏᴏᴜʀ ᴜʟᴛɪᴍᴀᴛᴇ ʙᴀꜱᴋᴇᴛʙᴀʟʟ ᴅᴇꜱᴛɪɴᴀᴛɪᴏɴ
+            </font>
+        </h3>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 HoopsHub.com. All rights reserved.</p>
+            <div>
+                <a href="https://www.facebook.com/jaja.jarred?mibextid=9R9pXO" style="color: #fff; text-decoration: none; margin: 0 10px;">Facebook</a>
+                <a href="https://www.tiktok.com/@MS4wLjABAAAAIqXnUM1Au8j1e0x8xyu6Kp3EJ2GEo_WKrXdbPHbCZKSuw9jY_4YJgRnl45OUURrR?_t=8fwgwnzx4de&_r=1" style="color: #fff; text-decoration: none; margin: 0 10px;">Tiktok</a>
+                <a href="https://instagram.com/jrredmoran?igshid=NGVhN2U2NjQ0Yg==" style="color: #fff; text-decoration: none; margin: 0 10px;">Instagram</a>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
